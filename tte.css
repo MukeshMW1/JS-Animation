@@ -1,0 +1,56 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+
+body
+{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background:#1D1E23;
+
+}
+
+h1{
+    color:white;
+    font-size:2rem;
+    font-weight:600;
+}
+
+
+h1 span
+{
+    position: relative;
+color:rgb(153, 72, 228);
+}
+
+h1 span::before{  
+    /* instead of using right -8px you can also use h1 span :: after t0 bring the cursor to the right p */
+    content:"";
+    background:blueviolet;
+    position:absolute;
+    right:-8px;
+    top:50%;
+    height:30px;
+    width:3px;
+    transform: translateY(-45%);
+    animation: blink 0.7s infinite;
+}
+
+h1 span.stop-blinking ::before
+{
+    animation:none;
+}
+
+@keyframes blink {
+   50% {
+        opacity:0;
+    }
+    
+}
